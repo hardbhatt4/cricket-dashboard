@@ -2,8 +2,8 @@ from pydantic import BaseModel
 
 
 class MetaResponse(BaseModel):
-    seasons: list[str | int]
-    teams: list[str | int]
+    seasons: list[str]
+    teams: list[str]
 
 
 class BattingRow(BaseModel):

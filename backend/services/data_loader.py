@@ -16,6 +16,7 @@ def get_data() -> pd.DataFrame:
 
         _df = pd.concat(dfs)
         _df.drop(["other_wicket_type", "other_player_dismissed"], axis=1, inplace=True)
+        _df["season"] = _df["season"].astype(str)
         extras_cols = ["wides", "noballs", "byes", "legbyes", "penalty", "extras"]
         _df[extras_cols] = _df[extras_cols].fillna(0).astype(int)
         _df["is_wicket"] = _df["wicket_type"].notna().astype(int)
