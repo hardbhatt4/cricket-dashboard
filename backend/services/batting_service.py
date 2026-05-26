@@ -8,10 +8,7 @@ def _apply_filters(df, season, team):
         filtered_df = filtered_df[filtered_df["season"] == season]
     if team is not None:
         # Entire matches where team played
-        filtered_df = filtered_df[
-            (filtered_df["batting_team"] == team)
-            | (filtered_df["bowling_team"] == team)
-        ]
+        filtered_df = filtered_df[filtered_df["batting_team"] == team]
 
     return filtered_df
 

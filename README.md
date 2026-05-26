@@ -1,6 +1,6 @@
 # IPL Cricket Dashboard
  
-A single-page analytics dashboard for IPL ball-by-ball match data. Built with React (Vanilla CSS) on the frontend and FastAPI + Pandas on the backend.
+A single-page analytics dashboard for IPL ball-by-ball match data. Built with Vue (Vanilla CSS) on the frontend and FastAPI + Pandas on the backend.
  
 ---
  
@@ -17,12 +17,14 @@ A single-page analytics dashboard for IPL ball-by-ball match data. Built with Re
  
 | Layer    | Technology                        |
 |----------|-----------------------------------|
-| Frontend | React, Vanilla CSS                |
+| Frontend | Vue, Vanilla CSS                  |
 | Backend  | FastAPI, Pandas, Uvicorn          |
 | Data     | Ball-by-ball CSV                  |
 
 ## Local setup
- 
+
+The Vue frontend is built as a static HTML and served by FastAPI
+
 ### Backend
  
 ```bash
@@ -31,14 +33,6 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
  
-The API will be available at `http://localhost:8000`.
+The Dashboard will be available at `http://localhost:8000`.
 Interactive docs at `http://localhost:8000/docs`.
- 
-### Frontend
- 
-```bash
-cd frontend
-npm install
-npm run dev
-```
 
