@@ -37,8 +37,8 @@ watch(
 </script>
 
 <template>
-    <div v-if="loading">Loading KPIs</div>
-    <div v-else>
+    <div v-if="loading" class="loading">Loading KPIs</div>
+    <div v-else class="kpi-cards-container">
         <div class="kpi-card">
             <h3>Total Matches</h3>
             <p>{{ kpi.matches_played.toLocaleString() }}</p>

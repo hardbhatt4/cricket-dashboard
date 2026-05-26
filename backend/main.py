@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from contextlib import asynccontextmanager
 from services.data_loader import get_data
 from services.meta_service import get_metadata
@@ -16,13 +17,6 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 
 @app.get("/api/meta", response_model=MetaResponse)
@@ -43,3 +37,11 @@ def batting(season: str | None = None, team: str | None = None):
 @app.get("/api/bowling", response_model=list[BowlingRow])
 def bowling(season: str | None = None, team: str | None = None):
     return get_bowling_stats(season, team)
+
+
+app.mount("/assets", StaticFiles(directory="../frontend/dist/assets"), name="assets")
+
+
+@app.get("/{full_path:path}")
+async def serve_frontend(full_path: str):
+    return FileResponse("../frontend/dist/index.html")

@@ -82,10 +82,10 @@ const toggleSort = (key) => {
 </script>
 
 <template>
-    <div class="Leaderboard">
+    <div class="leaderboard">
         <h1 v-if="props.type === 'batting'">Batting Leaderboard</h1>
         <h1 v-else-if="props.type === 'bowling'">Bowling Leaderboard</h1>
-        <div v-if="loading">Loading...</div>
+        <div v-if="loading" class="loading">Loading...</div>
         <table v-else>
             <thead>
                 <tr>

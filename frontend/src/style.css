@@ -1,0 +1,139 @@
+:root {
+  --bg-base: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-hover: #222536;
+
+  --border: #2e3148;
+
+  --text-primary: #e8eaf0;
+  --text-secondary: #8b90a7;
+
+  --accent: #4f8ef7;
+  --accent-hover: #3a7ae8;
+
+  --positive: #3dd68c;
+  --negative: #f75f5f;
+}
+
+main { padding: 1em; }
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+}
+.filters {
+    display: flex;
+    gap: 1em;
+}
+
+select{
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 0.5em;
+    border-radius: 4px;
+    cursor:pointer;
+}
+
+select:hover {
+    background-color: var(--bg-hover);
+}
+
+.loading {
+    text-align: center;
+    padding: 2em;
+    font-size: 1.5em;
+    color: var(--text-secondary);
+}
+
+.kpi-cards-container {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.kpi-card {
+    background-color: var(--bg-card);
+    padding: 0.5em;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border);
+    flex:1;
+}
+
+.kpi-card:hover {
+    background-color: var(--bg-hover);
+    color: var(--accent-hover);
+    border-color: var(--accent-hover);}
+
+h3{
+    margin: 0.5em 0;
+    font-size: 1.2em;
+    color: var(--accent);
+}
+
+.kpi-card p{
+    font-size: 1.5em;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.leaderboard-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.leaderboard {
+    background-color: var(--bg-card);
+    padding: 1em;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    flex: 1;
+}
+
+.leaderboard:hover{
+    border-color: var(--accent-hover);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.5em;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th{
+    background-color: var(--bg-card);
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    background-color: var(--bg-card);
+}
+
+tr:hover {
+    background-color: var(--bg-hover);
+}
+
+tr{
+    background-color: var(--bg-base);
+}
